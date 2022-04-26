@@ -1,0 +1,30 @@
+name: Compile
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  compile:
+    name: Compile
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: v1.21.0
+      - name: Run compile Linux x64
+        run: deno compile --target x86_64-unknown-linux-gnu --output output/convert_subtitle --allow-read --allow-write convert_subtitle.ts
+      - name: Run compile Windows x64
+        run: deno compile --target x86_64-pc-windows-msvc --output output/convert_subtitle.exe --allow-read --allow-write convert_subtitle.ts
+      - name: Run compile macOS x64
+        run: deno compile --target x86_64-apple-darwin --output output/convert_subtitle-macos_x64 --allow-read --allow-write convert_subtitle.ts
+      - name: Run compile macOS ARM
+        run: deno compile --target aarch64-apple-darwin --output output/convert_subtitle-macos_arm --allow-read --allow-write convert_subtitle.ts
+      - name: Upload compiled files
+        uses: actions/upload-artifact@v3
+        with:
+          name: result
+          path: output/
+          if-no-files-found: error
