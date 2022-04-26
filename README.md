@@ -39,7 +39,7 @@ Notice that this code will not handle embedding neither the subtitle nor the fon
 
 ## Using pre-compiled binaries
 
-You can also download pre-compiled binaries for Windows x64, macOS x64, macOS ARM and Linux x64 compiled using [`deno compile`](https://deno.land/manual@v1.21.0/tools/compiler) available in the Releases page. They behave the same as the above, but the `--allow-*` flags are not needed:
+You can also download pre-compiled binaries for Windows x64, macOS x64, macOS ARM and Linux x64 compiled using [`deno compile`](https://deno.land/manual@v1.21.0/tools/compiler) available [in the Releases page](https://github.com/qgustavor/Subtitle-Auto-Verification/releases). They behave the same as the above, but the `--allow-*` flags are not needed:
 
 ```sh
 convert_subtitle INPUT_SUBTITLE.ass OUTPUT_SUBTITLE.ass
