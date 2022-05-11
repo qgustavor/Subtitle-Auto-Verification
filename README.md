@@ -24,7 +24,7 @@ A survey done in April of 2021 on some members of a BitTorrent tracker showed th
 This method is the safer one since it allows you to check the code and not having to thrust the project contributors. First install Deno, download the source code and run the following:
 
 ```sh
-deno run --allow-read --allow-write convert_subtitle.ts INPUT_SUBTITLE.ass OUTPUT_SUBTITLE.ass
+deno run convert_subtitle.ts < INPUT_SUBTITLE.ass > OUTPUT_SUBTITLE.ass
 ```
 
 You can also install the script globally as a command [as described here](https://deno.land/manual@v1.21.0/tools/script_installer) and/or load it from the network [as described here](https://deno.land/manual@v1.21.0/getting_started/first_steps). It was tested with Deno 1.21.0.
@@ -46,7 +46,7 @@ Notice that this code will not handle embedding neither the subtitle nor the fon
 You can also download pre-compiled binaries for Windows x64, macOS x64, macOS ARM and Linux x64 compiled using [`deno compile`](https://deno.land/manual@v1.21.0/tools/compiler) available [in the Releases page](https://github.com/qgustavor/Subtitle-Auto-Verification/releases). They behave the same as the above, but the `--allow-*` flags are not needed:
 
 ```sh
-convert_subtitle INPUT_SUBTITLE.ass OUTPUT_SUBTITLE.ass
+convert_subtitle < INPUT_SUBTITLE.ass > OUTPUT_SUBTITLE.ass
 ```
 
 ## Testing
