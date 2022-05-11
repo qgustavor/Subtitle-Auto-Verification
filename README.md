@@ -6,6 +6,10 @@ Add verification checks in subtitles in order to detect common issues with subti
 
 - Check if the subtitle is being rendered in libass, otherwise show an error message;
 - Check if embedded fonts are loaded, otherwise show an error message:
+
+## Public reception
+
+![](https://i.imgur.com/PEUbHiw.png)
     
 ## Research
 
